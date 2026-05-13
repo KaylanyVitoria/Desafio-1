@@ -1,0 +1,168 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, hsl(0, 100%, 74%) 0%, hsl(0, 100%, 74%) 100%);
+    background-image: url('../images/bg-intro-desktop.png'), linear-gradient(135deg, hsl(0, 100%, 74%) 0%, hsl(0, 100%, 74%) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.intro h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trial-box {
+    background: hsl(248, 32%, 49%);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.trial-box p {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.trial-box strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.9rem 1rem;
+    border: 1px solid hsl(246, 25%, 77%);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    color: hsl(249, 10%, 26%);
+    padding-right: 2.5rem;
+}
+
+input::placeholder {
+    color: hsl(246, 25%, 77%);
+    opacity: 0.7;
+}
+
+input:focus {
+    outline: none;
+    border-color: hsl(154, 59%, 51%);
+}
+
+input.input-error {
+    border-color: hsl(0, 100%, 74%);
+    background-image: url('../images/icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+button {
+    padding: 1rem;
+    background: hsl(154, 59%, 51%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(106, 204, 161, 0.4);
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: hsl(154, 59%, 45%);
+}
+
+.terms {
+    font-size: 0.75rem;
+    color: hsl(246, 25%, 77%);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.error {
+    color: hsl(0, 100%, 74%);
+    font-size: 0.75rem;
+    display: block;
+    margin-top: -0.8rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        background-image: url('../images/bg-intro-mobile.png'), linear-gradient(135deg, hsl(0, 100%, 74%) 0%, hsl(0, 100%, 74%) 100%);
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    body {
+        padding: 1rem;
+    }
+}
