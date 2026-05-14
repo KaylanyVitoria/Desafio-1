@@ -1,13 +1,21 @@
-const form = document.querySelector('#form');
+const sform = document.querySelector('#form');
 const firstNameInput = document.querySelector('#first-name');
 const lastNameInput = document.querySelector('#last-name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 
+const originalEmailPlaceholder = emailInput.placeholder;
+
+emailInput.addEventListener('focus', () => {
+    emailInput.placeholder = originalEmailPlaceholder;
+    emailInput.classList.remove('input-error');
+    document.getElementById('email-error').textContent = '';
+});
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // Limpar mensagens de erro e remover classe de erro anteriores
+    // Limpar mensagens de erro 
     document.querySelectorAll('.error').forEach(span => span.textContent = '');
     document.querySelectorAll('input').forEach(input => input.classList.remove('input-error'));
 
@@ -31,10 +39,13 @@ form.addEventListener('submit', (event) => {
     if (emailInput.value.trim() === '') {
         document.getElementById('email-error').textContent = 'Email cannot be empty';
         emailInput.classList.add('input-error');
+        emailInput.placeholder = 'email@example.com';
         isValid = false;
     } else if (!isValidEmail(emailInput.value)) {
         document.getElementById('email-error').textContent = 'Looks like this is not an email';
         emailInput.classList.add('input-error');
+        emailInput.value = '';
+        emailInput.placeholder = 'email@example.com';
         isValid = false;
     }
 
